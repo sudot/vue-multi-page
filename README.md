@@ -10,14 +10,14 @@
 ```bash
 vue init webpack vue-multi-page
 ```
-> 为了简便可以不用jslint等
+> 为了简便可以不用`jslint`等
 
 2. 开始改造
-> 最主要的一步，将webpack进行改造以满足对多页面需求的支持，其实多页面，即是webpack有多个入口。在此步中，我们主要的操作的对象是 build文件夹下的js文件。
+> 最主要的一步，将`webpack`进行改造以满足对多页面需求的支持，其实多页面，即是`webpack`有多个入口。在此步中，我们主要的操作的对象是`build`文件夹下的js文件。
 
-- 首先，我们对 utils.js进行改造  
-添加一个方法：getEntries，方法中需要使用到node的globa模块，所以需要引入`glob`模块，用于读取`webpack`入口目录文件
-> 看到issue中有人问glob模块，这个是需要npm安装的，[https://github.com/isaacs/node-glob](https://github.com/isaacs/node-glob)
+- 首先，我们对`utils.js`进行改造  
+添加一个方法：`getEntries`，方法中需要使用到`node`的`globa`模块，所以需要引入`glob`模块，用于读取`webpack`入口目录文件
+> 看到issue中有人问`glob`模块，这个是需要`npm`安装的，[https://github.com/isaacs/node-glob](https://github.com/isaacs/node-glob)
 ```
 var glob = require('glob');
 exports.getEntries = function (globPath) {
